@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Cheating Headgear Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="dashboard-container" class="dashboard-panel hide">
+        
+        <header class="main-header">
+            <h1>cheatCHER History Panel</h1>
+            <div id="system-status" class="status-indicator">MONITORING ACTIVE</div>  <!-- make sure this will change once the device is offline -->
+        </header>
+
+        <div class="dashboard-layout">
+            
+            <section class="panel-box data-section">
+    <h2> Sensors Data Log</h2>
+    <p>Live event logs from the headgear:</p>
+    
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>DATE & TIME</th>
+                    <th>ESPC CAM</th>
+                    <th>SOUND SENSOR</th>
+                    <th>TILT SENSOR</th>
+                </tr>
+            </thead>
+            
+            <tbody id="log-table-body">
+                
+                <tr class="row-alert">
+                    <td>This is a sample date</td>
+                    <td>where the picture/video will be </td>
+                    <td>Sound deteected</td>
+                    <td>Tilt detected</td>
+                </tr>
+                
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
