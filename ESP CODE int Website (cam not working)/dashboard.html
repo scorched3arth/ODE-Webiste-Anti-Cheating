@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cheatCHER Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="simple-dashboard-body">
+
+  <main class="simple-dashboard">
+
+    <header class="simple-dashboard-header">
+      <div>
+        <h1>cheat<span>CHER</span> Dashboard</h1>
+        <p>Live event logs from the anti-cheating headgear</p>
+      </div>
+
+       <div class="header-right">
+  <details class="user-profile-pill">
+    
+    <summary class="user-profile-summary">
+      <div class="user-avatar-circle">AU</div>
+      <span class="user-profile-name">Admin User</span>
+    </summary>
+    
+    <div class="admin-dropdown">
+      <a href="login.html" class="dropdown-item">Logout</a>
+    </div>
+
+  </details>
+</div>
+    </header>
+
+    <section class="dashboard-cards">
+
+      <a href="#sensors-log" class="info-card monitoring-card">
+        <div class="card-icon">◉</div>
+        <div>
+          <p>Monitoring Active</p>
+          <h2 id="total-runtime">00h 00m</h2>
+        </div>
+      </a>
+
+      <a href="#latest-capture" class="info-card">
+        <div class="card-icon">▧</div>
+        <div>
+          <p>ESP Cam</p>
+          <h2 id="cam-total">0</h2>
+          <small>Captured files</small>
+        </div>
+      </a>
+
+      <a href="#sensors-log" class="info-card">
+        <div class="card-icon">⌁</div>
+        <div>
+          <p>Sound Sensor</p>
+          <h2 id="sound-total">0</h2>
+          <small>Sound detections</small>
+        </div>
+      </a>
+
+      <a href="#sensors-log" class="info-card">
+        <div class="card-icon">⚠</div>
+        <div>
+          <p>Tilt Sensor</p>
+          <h2 id="tilt-total">0</h2>
+          <small>Head movement alerts</small>
+        </div>
+      </a>
+
+    </section>
+
+    <section class="dashboard-lower-grid">
+
+      <section class="data-panel" id="sensors-log">
+        <div class="panel-header">
+          <div>
+            <h2>Sensors Data Log</h2>
+            <p>Detected activities</p>
+          </div>
+          <button class="filter-btn">Today</button>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="sensor-table">
+            <thead>
+              <tr>
+                <th>Date & Time</th>
+                <th>ESP Cam</th>
+                <th>Sound Sensor</th>
+                <th>Tilt Sensor</th>
+              </tr>
+            </thead>
+            <tbody id="log-table-body"></tbody>
+          </table>
+          
+          <div class="empty-state">
+            <div class="empty-icon">◎</div>
+            <h3>No detection records yet</h3>
+            <p>Waiting for headgear activity from the ESP Cam, sound sensor, and tilt sensor.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="latest-capture-card" id="latest-capture">
+        <div class="latest-header">
+          <h2>Latest Capture</h2>
+          <p><span></span> Live</p>
+        </div>
+
+        <div class="capture-box" id="latest-preview" style="display: flex; justify-content: center; align-items: center; overflow: hidden; background: #222; min-height: 240px; border-radius: 8px;">
+          <p id="placeholder-text" style="color: #aaa; margin: 0;">Camera Preview Ready</p>
+          <img id="camera-frame" src="" alt="Live Capture Event" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div class="capture-info">
+          <h3 id="latest-title"><span class="cyan-text">▧</span> Standby Mode</h3>
+          <p id="latest-date">No events captured yet</p>
+        </div>
+
+        
+        <a href="capture-details.html?id=event-001" class="details-btn" id="view-details-link">
+          View Full Details
+        </a>
+      </aside>
+
+    </section>
+
+    <section class="manual-button-section">
+      <a href="manual.html" class="manual-page-btn">
+        Open User Manual
+      </a>
+    </section>
+
+    <footer class="dashboard-footer">
+      <p>cheat<span>CHER</span> Anti-Cheating Headgear Monitoring System</p>
+      <small>© 2026 cheatCHER. Detection logs are for academic integrity monitoring only.</small>
+    </footer>
+
+  </main>
+  
+  <script src="script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capture Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="capture-details-body">
+
+  <main class="capture-details-page">
+
+    <header class="capture-details-header">
+      <div>
+        <h1>Capture <span>Details</span></h1>
+        <p>Full information of the selected detected event.</p>
+      </div>
+
+      <a href="dashboard.html" class="back-dashboard-btn">
+        Back to Dashboard
+      </a>
+    </header>
+
+    <section class="capture-details-panel">
+
+      <div class="capture-large-preview">
+        <div id="preview-placeholder">
+          <span>▧</span>
+          <p>Camera Preview</p>
+        </div>
+        <img id="details-camera-frame" src="" alt="Live Capture Event" style="display: none; width: 100%; height: auto; border-radius: 8px; object-fit: contain;">
+      </div>
+
+      <div class="detail-card">
+        <h2>Photo Captured</h2>
+
+        <div class="detail-list">
+          <p><strong>Date & Time:</strong> <span id="dt-time">Loading Event Data...</span></p>
+          <p><strong>ESP Cam:</strong> <span id="dt-cam" class="cyan-text">Photo Captured</span></p>
+          <p><strong>Sound Sensor:</strong> <span id="dt-sound">Stable</span></p>
+          <p><strong>Tilt Sensor:</strong> <span id="dt-tilt">Stable</span></p>
+          <p><strong>Status:</strong> <span id="dt-status">Processing...</span></p>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <h2>System Interpretation</h2>
+        <p id="dt-interpretation">
+          Analyzing hardware state data packet...
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+  <script src="script.js"></script> 
+</body>
+</html>
