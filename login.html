@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anti-Cheating Headgear Terminal</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script> 
 </head>
 
 <body>
@@ -105,7 +106,7 @@
         <h2>Welcome back</h2>
         <p class="login-subtitle">Sign in to continue to <span>cheatCHER</span></p>
 
-        <form id="login-form" action="dashboard.html" method="get">
+        <form id="login-form" onsubmit="return checkLogin(event)" action="index.html" method="get">
 
           <div class="input-group">
             <label for="username">University ID</label>
@@ -119,17 +120,16 @@
 
           <p id="login-error-msg" class="error-hide">Invalid credentials.</p>
 
-          <div class="login-options">
-            <label>
-              <input type="checkbox">
-              Remember me
-            </label>
+                    <div class="Forgot">
+                        <button type="submit" id="login-btn">Log in</button>
 
-            <a href="forgot-password.html">Forgot password?</a>
-          </div>
-
-          <button type="submit" id="login-btn">Sign In</button>
-
+                    </div>
+                        <a href="forgot-password.html">Forgot Password?</a>
+                        <script src="script.js"></script>
+                    
+                </form>
+            </div>
+    
         </form>
       </section>
 

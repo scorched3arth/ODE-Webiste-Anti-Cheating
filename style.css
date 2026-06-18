@@ -490,81 +490,140 @@ body.simple-dashboard-body {
   margin-bottom: 10px;
 }
 
-.simple-dashboard-header h1 span {
+.simple-dashboard-header h1 {
   color: var(--cyan);
 }
 
-.simple-dashboard-header p {
-  color: #94A3B8;
-  font-size: 16px;
+.simple-dashboard-header h1 span {
+  color: var(--white);
 }
 
+.simple-dashboard-header p {
+  color: var(--cyan);
+  font-size: 16px;
+}
 .header-right {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-/* ADMIN USER DROPDOWN */
-.admin-menu {
+/* Base Details Wrapper Override */
+details.user-profile-pill {
   position: relative;
+  display: inline-block;
 }
 
-.admin-menu summary {
-  list-style: none;
-  display: flex;
+/* The Clickable Capsule Button (Base State: Clean & Static) */
+details.user-profile-pill summary.user-profile-summary {
+  display: flex !important;    
+  flex-direction: row;
+  align-items: center;         
+  width: 170px;                
+  height: 48px;                
+  background-color: rgba(16, 28, 48, 0.35); 
+  border: 1px solid rgba(52, 152, 219, 0.5); /* Soft baseline border */
+  border-radius: 50px;   
+  padding-left: 6px;           
+  box-sizing: border-box;
+  cursor: pointer;             
+  
+  /* Smooth transitions for seamless color/glow morphing */
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  
+  /* Strip out standard HTML summary arrows */
+  list-style: none !important;      
+  list-style-type: none !important; 
+}
+
+/* ─── HOVER ACTION STATE ─── */
+/* The pill shape will now only activate its vibrant glow effect when hovered! */
+details.user-profile-pill summary.user-profile-summary:hover {
+  background-color: rgba(16, 28, 48, 0.6);
+  border-color: #3498db; /* Solid cyan blue accent border */
+  
+  /* Low-intensity blue ambient outer glow matches your theme panels */
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.45), 
+              inset 0 0 10px rgba(52, 152, 219, 0.15);
+}
+
+/* Completely clears summary markers across all web browsers */
+details.user-profile-pill summary::-webkit-details-marker,
+details.user-profile-pill summary::marker {
+  display: none !important;
+  font-size: 0px !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+/* Inner Circle Avatar Badge */
+.user-avatar-circle {
+  display: flex !important;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  color: #E0F2FE;
-}
-
-.admin-menu summary::-webkit-details-marker {
-  display: none;
-}
-
-.admin-avatar {
-  width: 38px;
-  height: 38px;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(52, 152, 219, 0.2); 
+  color: #3498db; 
+  font-weight: bold;
+  font-size: 0.9rem;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: rgba(14, 165, 233, 0.25);
-  color: var(--cyan);
-  font-size: 13px;
-  font-weight: 900;
+  flex-shrink: 0;              
 }
 
-.admin-menu summary p {
-  color: #E0F2FE;
-  font-weight: 700;
+/* Username Text Inside Pill */
+.user-profile-name {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;         
+  margin: 0 auto;        
+  padding-right: 12px;         
 }
-
+/* ─── FLOATING DROPDOWN BOX OVERLAY ─── */
 .admin-dropdown {
   position: absolute;
+  top: 52px;                   /* Sits perfectly right below your pill container */
   right: 0;
-  top: 48px;
-  width: 140px;
-  padding: 8px;
-  border-radius: 12px;
-  background: #0F172A;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  z-index: 20;
+  background-color: #101c30;   /* Matches your exact theme background panel color */
+  border: 1px solid #3498db;   /* Subtle blue accent outline border */
+  
+  /* SHAPE FIX: Rounded capsule-style corners to match the profile pill */
+  border-radius: 25px;         
+  
+  /* SIZE FIX: Compact width and padding so it isn't overly bulky */
+  width: 120px;                
+  padding: 4px;
+  
+  /* High depth drop shadow eliminates layout clipping and collisions */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); 
+  z-index: 100;                
 }
 
-.admin-dropdown a {
+/* ─── DROPDOWN ITEM (LOGOUT) ─── */
+.admin-dropdown .dropdown-item {
   display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
-  color: #E0F2FE;
-  text-decoration: none;
-  font-weight: 700;
+  padding: 8px 12px;           /* Slightly reduced internal padding for a cleaner look */
+  color: #ffffff;
+  text-decoration: none;       /* Strips default browser link underline formats */
+  
+  /* FONT FIX: Inherits your clean UI font and adjusts size/weight down */
+  font-family: inherit;        
+  font-size: 0.85rem;          
+  font-weight: 500;
+  text-align: center;          /* Centers text options perfectly inside container borders */
+  
+  /* Matches the capsule curves internally on hover states */
+  border-radius: 20px;         
+  transition: all 0.2s ease-in-out;
 }
 
-.admin-dropdown a:hover {
-  background: rgba(56, 189, 248, 0.10);
-  color: var(--cyan);
+/* Subtle cyan accent glow and tint background when hovering options */
+.admin-dropdown .dropdown-item:hover {
+  background: rgba(56, 189, 248, 0.12); 
+  color: #38bdf8; 
+
 }
 
 /* SUMMARY CARDS */
@@ -901,11 +960,11 @@ body.simple-dashboard-body {
 
 .dashboard-footer p {
   font-weight: 800;
-  color: #cbd5e1;
+  color: var(--cyan);
 }
 
 .dashboard-footer p span {
-  color: var(--cyan);
+  color: var(--white);
 }
 
 .dashboard-footer small {
