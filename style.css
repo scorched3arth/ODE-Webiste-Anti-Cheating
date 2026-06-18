@@ -90,12 +90,13 @@ input {
 }
 
 .brand-headgear-logo {
-  width: 78px;
-  height: 78px;
-  max-width: 78px;
-  max-height: 78px;
+  width: 90px;
+  height: 90px;
+  max-width: 90px;
+  max-height: 90px;
   object-fit: contain;
   display: block;
+  transform: scale(1.15);
   filter:
     drop-shadow(0 0 8px rgba(56, 189, 248, 0.45))
     drop-shadow(0 8px 10px rgba(0, 0, 0, 0.45));
